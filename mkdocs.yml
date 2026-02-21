@@ -1,0 +1,146 @@
+site_name: DQuode Documentation
+site_url: https://docs.dquode.com
+docs_dir: docs
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Poppins
+  features:
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - navigation.path
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+  icon:
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+
+markdown_extensions:
+  - attr_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      linenums: false
+      linenums_style: table
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+
+extra:
+  versions:
+    label: "Current version"
+    current: "Version 1"
+    list:
+      - name: v2
+        url: v2/
+      - name: v1
+        url: v1/
+
+nav:
+    - Current version (v1):
+        - v1:
+          - Introduction: v1/index.md
+          - Setup:
+            - Requirements: v1/getting-started/requirements.md
+            - Setup and Go: v1/getting-started/setup.md
+          - Routing:
+            - Defining routes: v1/routing/defining-routes.md
+            # - Route groups: v1/routing/route-groups.md
+            - Routing guarantees: v1/routing/routing-guarantees.md
+          - Requests:
+            - Overview: v1/requests/index.md
+            - Request functions: v1/requests/request-functions.md
+          - Models:
+            - Creating a model: v1/models/creating-a-model.md
+            - Linking to tables: v1/models/linking-to-tables.md
+            - Using models: v1/models/using-models.md
+          - Controllers:
+            - Key aspects: v1/controllers/key-aspects.md
+            - Creating controllers: v1/controllers/creating-controllers.md
+            - How to use: v1/controllers/using-controllers.md
+            # - Handling request data: v1/controllers/handling-request-data.md
+            - Sample implementations: v1/controllers/implementing-common-intents.md
+            - Connecting to view: v1/controllers/connecting-to-view.md
+            - Handling function responses: v1/controllers/handling-function-responses.md
+          - Views:
+            - Creating views: v1/views/creating-views.md
+            - Defining routes: v1/views/defining-routes-in-views.md
+            - Multiple routes and route groups: v1/views/multiple-routes-and-route-groups.md
+            - Additional options: v1/views/additional-options.md
+          - Response:
+            - Overview: v1/response/index.md
+            - Response functions: v1/response/response-functions.md
+          - Database operations:
+            - Setup: v1/database/setup-required.md
+            - Database functions: v1/database/database-functions.md
+            - Create: v1/database/create.md
+            - Read: v1/database/read.md
+            - Update: v1/database/update.md
+            - Delete: v1/database/delete.md
+            - Count: v1/database/count.md
+            - Filters and params: v1/database/filters-and-params.md
+          - Limitations: v1/limitations/index.md
+          - Guides & reference:
+            - Auth: v1/guides/auth.md
+            - Validation: v1/guides/validation.md
+            - Config: v1/guides/config.md
+            - CORS: v1/guides/cors.md
+            - Extensibility: v1/guides/extensibility.md
+            - Scheduler: v1/guides/scheduler.md
+            - Security: v1/guides/security.md
+            - Files: v1/guides/files.md
+          - API reference:
+            - Routing: v1/api-reference/routing.md
+            - Request: v1/api-reference/request.md
+            - Response: v1/api-reference/response.md
+            - ORM: v1/api-reference/orm.md
+            - Security: v1/api-reference/security.md
+          - Changelog: v1/changelog.md
+          - Deployment: v1/deployment.md
+
+
+    # - Previous versions:
+      
+     
