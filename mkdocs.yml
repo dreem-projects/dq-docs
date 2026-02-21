@@ -80,6 +80,7 @@ extra:
         url: v1/
 
 nav:
+    - Overview: index.md
     - Current version (v1):
         - v1:
           - Introduction: v1/index.md
