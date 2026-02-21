@@ -24,5 +24,13 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material 
-      - run: mkdocs gh-deploy --force
+      - run: pip install mkdocs-material
+      - name: Set site_url for GitHub Pages
+        run: |
+          # GitHub Pages serves at https://<owner>.github.io/<repo>/
+          SITE_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+          sed -i.bak "s|^site_url:.*|site_url: $SITE_URL|" mkdocs.yml && rm -f mkdocs.yml.bak
+        working-directory: docs
+      - name: Build and deploy to GitHub Pages
+        run: mkdocs gh-deploy --force
+        working-directory: docs

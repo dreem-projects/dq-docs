@@ -1,4 +1,5 @@
 site_name: DQuode Documentation
+# Overridden by CI to https://<owner>.github.io/<repo>/ when deploying to GitHub Pages (required for CSS/assets to load)
 site_url: https://docs.dquode.com
 docs_dir: docs
 
