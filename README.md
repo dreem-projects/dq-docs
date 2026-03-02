@@ -16,6 +16,6 @@
 </p>
   <p style="margin-top: 1.5rem;">
   
-    <a href="v1/" style="color:#563d7c; font-weight: bold;">📖 Current version (v1) →</a>
+    <a href="v1/" style="color:#563d7c; font-weight: bold;">📖 Current version (v1) &rarr;</a>
   </p>
 </div>
