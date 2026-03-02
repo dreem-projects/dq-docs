@@ -17,6 +17,6 @@
   <p style="margin-top: 1.5rem;">
     <!-- <a href="https://dreem-projects.github.io/dq-docs/v1/" style="color:#563d7c; font-weight: bold;">View on GitHub</a>
     &nbsp;·&nbsp; -->
-    <a href="https://dreem-projects.github.io/dq-docs/v1/" style="color:#563d7c; font-weight: bold;">🔥 Try it out (v1) →</a>
+    <a href="https://dreem-projects.github.io/dq-docs/v1/" style="color:#563d7c; font-weight: bold;">🔥 Try it out →</a>
   </p>
 </div>
