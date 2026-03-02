@@ -15,7 +15,8 @@
   <b>DQuode</b> is a lightweight MVC Python backend framework with a built-in ORM, enforced architecture, integrated logging, and production-ready defaults — eliminating setup friction so you can build structured, scalable APIs from day one.
 </p>
   <p style="margin-top: 1.5rem;">
-  
-    <a href="v1/" style="color:#563d7c; font-weight: bold;">📖 Current version (v1) &rarr;</a>
+    <!-- <a href="https://dreem-projects.github.io/dq-docs/v1/" style="color:#563d7c; font-weight: bold;">View on GitHub</a>
+    &nbsp;·&nbsp; -->
+    <a href="v1/" style="color:#563d7c; font-weight: bold;">📖 Current version (v1) →</a>
   </p>
 </div>
