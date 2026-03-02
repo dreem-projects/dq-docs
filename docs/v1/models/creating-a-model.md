@@ -32,3 +32,25 @@ class MyModel(database.Database):
 If the project uses a central model list (e.g. `models/_modelsList.py`), register the new model there so it can be used by DBware or other code that looks up models by key.
 
 ---
+
+## Choosing the database connection
+
+When you use [multiple databases](../database/setup-required.md#multi-database), the model must accept a **connection** argument and pass it to `super().__init__(connection)`. The connection name must match a key under `databases` in [settings.json](../guides/config.md#settings-non-secrets-settingsjson) (e.g. `default`, `app`, `customers`). Credentials for each connection live in [.env](../guides/config.md#secrets-env).
+
+Example:
+
+```python
+class SampleModel(database.Database):
+    tablename = 'dquode_sample'
+
+    def __init__(self, connection='default'):
+        super().__init__(connection)
+        self.setTable(self.tablename)
+```
+
+- **connection='default'** — Uses the default database (from .env or from `databases.default` in settings + `DB_USER`/`DB_PASSWORD` in .env).
+- **connection='app'** — Uses the **app** database (from `databases.app` in settings + `DB_APP_USER`/`DB_APP_PASSWORD` in .env).
+
+You can also call **setConnection(name)** on an existing model instance to switch the connection for subsequent operations.
+
+---

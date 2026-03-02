@@ -74,8 +74,8 @@ extra:
     label: "Current version"
     current: "Version 1"
     list:
-      - name: v2
-        url: v2/
+      # - name: v2
+      #   url: v2/
       - name: v1
         url: v1/
 
@@ -87,17 +87,21 @@ nav:
           - Setup:
             - Requirements: v1/getting-started/requirements.md
             - Setup and Go: v1/getting-started/setup.md
+          - Requests:
+            - Overview: v1/requests/index.md
+            - Request functions: v1/requests/request-functions.md
+          - Response:
+            - Overview: v1/response/index.md
+            - Response functions: v1/response/response-functions.md
           - Routing:
             - Defining routes: v1/routing/defining-routes.md
             # - Route groups: v1/routing/route-groups.md
             - Routing guarantees: v1/routing/routing-guarantees.md
-          - Requests:
-            - Overview: v1/requests/index.md
-            - Request functions: v1/requests/request-functions.md
-          - Models:
-            - Creating a model: v1/models/creating-a-model.md
-            - Linking to tables: v1/models/linking-to-tables.md
-            - Using models: v1/models/using-models.md
+          - Views:
+            - Creating views: v1/views/creating-views.md
+            - Defining routes: v1/views/defining-routes-in-views.md
+            - Multiple routes and route groups: v1/views/multiple-routes-and-route-groups.md
+            - Additional options: v1/views/additional-options.md
           - Controllers:
             - Key aspects: v1/controllers/key-aspects.md
             - Creating controllers: v1/controllers/creating-controllers.md
@@ -106,14 +110,10 @@ nav:
             - Sample implementations: v1/controllers/implementing-common-intents.md
             - Connecting to view: v1/controllers/connecting-to-view.md
             - Handling function responses: v1/controllers/handling-function-responses.md
-          - Views:
-            - Creating views: v1/views/creating-views.md
-            - Defining routes: v1/views/defining-routes-in-views.md
-            - Multiple routes and route groups: v1/views/multiple-routes-and-route-groups.md
-            - Additional options: v1/views/additional-options.md
-          - Response:
-            - Overview: v1/response/index.md
-            - Response functions: v1/response/response-functions.md
+          - Models:
+            - Creating a model: v1/models/creating-a-model.md
+            - Linking to tables: v1/models/linking-to-tables.md
+            - Using models: v1/models/using-models.md
           - Database operations:
             - Setup: v1/database/setup-required.md
             - Database functions: v1/database/database-functions.md

@@ -38,7 +38,7 @@
     <div class="md-header__version" style="display: flex; align-items: center; margin-left: 0.5rem;">
       <select class="md-version__select" onchange="if(this.value) window.location.href=this.value" style="background: var(--md-default-bg-color); color: var(--md-default-fg-color); border: 1px solid var(--md-default-fg-color--light); border-radius: 4px; padding: 0.35rem 1.75rem 0.35rem 0.5rem; font-size: 0.8rem; cursor: pointer; appearance: auto;">
         {% for v in config.extra.versions.list %}
-        <option value="{{ v.url }}" {% if v.name == config.extra.versions.current %}selected{% endif %}>{{ v.name }}</option>
+        <option value="{{ v.url | url }}" {% if v.name == config.extra.versions.current %}selected{% endif %}>{{ v.name }}</option>
         {% endfor %}
       </select>
     </div>

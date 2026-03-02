@@ -1,6 +1,71 @@
 # Config
 
-Config is the place you pass **whatever configuration your application needs**. You define it in **config.py** as a **CONFIG** dict; anywhere in the app you read it with **getconfig('name')**. Whatever you set is what you get — no fixed schema.
+DQuode uses a clear split: **non-secret configuration** in **settings.json**, **secrets** in **.env**, and optional app-level config in **config.py**. This keeps credentials out of version control and makes multi-database setup straightforward.
+
+---
+
+## Settings (non-secrets): settings.json
+
+**settings.json** (or **.settings.json** / **.settings.example.json** in your project root) holds **all configuration that is not secret**: environment name, server port, database connection _structure_ (type, host, port, database name, TLS flag), Redis host/port, etc. **No passwords or usernames** go here — only structure and non-sensitive values.
+
+The framework reads it with **settings(key)** from `dreema.helpers`. Use dot-notation for nested keys: `settings("databases.default.host")`, `settings("serverPort")`, `settings("environment")`.
+
+Example (safe to commit or share):
+
+```json
+{
+  "environment": "local",
+  "serverPort": 8888,
+  "databases": {
+    "default": {
+      "type": "mysql",
+      "host": "localhost",
+      "port": 3306,
+      "database": "dquode_test",
+      "useTls": false
+    },
+    "app": {
+      "type": "mysql",
+      "host": "localhost",
+      "port": 3306,
+      "database": "app_db",
+      "useTls": false
+    }
+  }
+}
+```
+
+- **default** — Used when you do not pass a connection name (see [Database setup](../database/setup-required.md#multi-database) and [Creating a model](../models/creating-a-model.md#choosing-the-database-connection)).
+- **app**, **customers**, etc. — Named connections for [multi-database](../database/setup-required.md#multi-database). You define type, host, port, database here; credentials live in **.env** only.
+
+See [Database setup](../database/setup-required.md) for how the ORM uses `databases.*` and [Multi-database](../database/setup-required.md#multi-database) for switching connections at the model level.
+
+---
+
+## Secrets: .env
+
+**.env** holds **all secrets**: database usernames and passwords, Redis password, and any other sensitive values. It is **not** committed to version control. The framework reads it with **getenv(key, default)** from `dreema.helpers`; if a key is missing in .env, **getenv** falls back to the system environment (e.g. `os.environ`).
+
+**Default database** (connection name `default`):
+
+| Variable      | Description   | Example       |
+| ------------- | ------------- | ------------- |
+| `DB_TYPE`     | Engine        | `mysql`       |
+| `DB_HOST`     | Host          | `localhost`   |
+| `DB_PORT`     | Port          | `3306`        |
+| `DB_NAME`     | Database name | `dquode_test` |
+| `DB_USER`     | Username      | `root`        |
+| `DB_PASSWORD` | Password      | _(secret)_    |
+| `DB_USE_TLS`  | Use TLS       | `false`       |
+
+**Named databases** (e.g. connection `app` or `customers`): put credentials in .env with the connection name in the key:
+
+- `DB_APP_USER`, `DB_APP_PASSWORD` for connection **app**
+- `DB_CUSTOMERS_USER`, `DB_CUSTOMERS_PASSWORD` for connection **customers**
+
+The connection’s type, host, port, and database name come from **settings.json**; only user and password come from **.env**. See [Multi-database](../database/setup-required.md#multi-database).
+
+**Redis** (if used): `REDIS_HOST`, `REDIS_PORT`, `REDIS_PASSWORD` — all from .env.
 
 ---
 
@@ -80,10 +145,10 @@ The framework may read config for built-in behaviour (e.g. **getconfig("cors")**
 
 ## Summary
 
-| Step | What you do |
-|------|-------------|
+| Step   | What you do                                                                                 |
+| ------ | ------------------------------------------------------------------------------------------- |
 | Define | In **config.py**, set **CONFIG = { "key": value, ... }** with any keys and values you need. |
-| Read | In code, call **getconfig("key")** (and optionally **getconfig("key", default)**). |
-| Result | You get back exactly what you set for that key. |
+| Read   | In code, call **getconfig("key")** (and optionally **getconfig("key", default)**).          |
+| Result | You get back exactly what you set for that key.                                             |
 
-For environment-specific values (e.g. DB host, port), use **.env** and **getenv("VAR_NAME")**; see your project’s env template. Config is for application shape and options; env is for deployment and secrets.
+For **non-secret** structure (DB host, port, database name, server port), use **settings.json** and **settings("key")** as above. For **secrets** (DB user, password, Redis password), use **.env** and **getenv("VAR_NAME")**; **getenv** also falls back to the system environment. **config.py** is for application shape and options (e.g. CORS, feature flags) that are not environment-specific secrets.
