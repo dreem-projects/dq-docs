@@ -2,11 +2,11 @@
 <div align="center" style="margin-bottom: 2rem;">
   <img src="https://img.shields.io/badge/DQuode-Python%20Backend-blueviolet?style=for-the-badge&logo=python" alt="DQuode Python Backend" /><br>
  <h1 style="margin-top: 1rem; font-size: 2.9rem; color:#563d7c;">
-  Stop Assembling. <br />Start Building.
+  🚀Stop Assembling. <br />Start Building.
 </h1>
 
 <p style="font-size:1.25rem; font-weight:600; margin-top:0.5rem; color:#563d7c;">
-  Perform CRUD. Connect Models. Ship in Minutes.
+  ⚡ Perform CRUD. 🔗 Connect Models. ⏱️ Ship in Minutes.
 </p>
 
 <p style="font-size:1.2rem; max-width:720px; margin:1.5rem auto;">
@@ -15,6 +15,6 @@
   <p style="margin-top: 1.5rem;">
     <a href="https://dreem-projects.github.io/dq-docs/v1/" style="color:#563d7c; font-weight: bold;">View on GitHub</a>
     &nbsp;·&nbsp;
-    <a href="v1/" style="color:#563d7c; font-weight: bold;">Current version (v1) →</a>
+    <a href="v1/" style="color:#563d7c; font-weight: bold;">📖 Current version (v1) →</a>
   </p>
 </div>
