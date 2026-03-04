@@ -14,9 +14,13 @@ pip install -r requirements.txt
 
 ## 3. Start the server
 
+From the project root, run:
+
 ```bash
 python start.py
 ```
+
+This starts the app (Uvicorn) using defaults from **settings.json**. If the requested port is already in use, the app will try the next available port and print a message (e.g. *Port 8888 is already in use. Try next available port: 8889*).
 
 ## 4. Access your application
 
@@ -28,10 +32,24 @@ Open [http://127.0.0.1:8888/](http://127.0.0.1:8888/) in your browser, or use cu
 
     Non-secret config (environment, server port, database structure) lives in **settings.json**; secrets (DB user/password, Redis password) go in **.env**. See [Config](../guides/config.md) and [Database setup](../database/setup-required.md). For [multi-database](../database/setup-required.md#multi-database), define connections in settings and pass the connection name when creating models.
 
-!!! info "Changing the port"
+!!! info "Start options"
 
-    By default, the server runs on port **8888**. To use a different port:
+    **Port and host**
 
-    - **Via settings:** Set **serverPort** in **settings.json** (e.g. `"serverPort": 8000`).
-    - **Via CLI:** Run `python start.py --port=<PORT>`.
-    - **Via .env:** Add `SERVER_PORT=<PORT>` to your **.env** file.
+    - Default port comes from **serverPort** in **settings.json** (default **8888**). To use another port: set **serverPort** in **settings.json** or run `python start.py --port=<PORT>`.
+    - Default host is **127.0.0.1**. Override with `python start.py --host=<HOST>`.
+
+    **Reload (development)**
+
+    - Auto-reload is **on** when **environment** in **settings.json** is **local**, and **off** when **environment** is **live**.
+    - Override: `python start.py --reload` or `python start.py --no-reload`.
+
+    **Other CLI flags**
+
+    | Flag | Default | Description |
+    |------|---------|-------------|
+    | `--port` | from **settings.json** (serverPort) or 8888 | Port to run the server on. |
+    | `--host` | 127.0.0.1 | Host address. |
+    | `--reload` / `--no-reload` | reload on if environment is local | Enable or disable auto-reload. |
+    | `--log-level` | info | Logging level. |
+    | `--workers` | 4 | Number of worker processes. |
