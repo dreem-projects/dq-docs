@@ -42,7 +42,7 @@ async def my_handler(request):
 No auto-injected dependencies — read everything via the **request**:
 
 - `await request.body()`
-- `request.params()`
+- `request.queryParam()`
 - `request.headers()`
 
 ---
@@ -108,6 +108,7 @@ Controllers control **what you send**. You can return **anything** the framework
   ```
 
 - **Standard envelope** (when you want **data**, **message**, **status** and optional **statuscode**):
+
   ```py
   return response(data=..., message=..., status=..., statuscode(optional)=200)
   ```

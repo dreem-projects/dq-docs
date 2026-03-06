@@ -28,7 +28,27 @@ route(path="/", methods=["GET", "POST"], handler=SomeController.welcome)
 
 - Always start your paths with a leading slash: `"/"`, `"/items"`, `"/api/v1/users"`, etc.
 - Paths are normalized (e.g., consistent handling of trailing slashes) when routes are cached by the Dispatcher.
-- Support for path parameters (e.g., `/items/:id`) is currently being developed and will be released soon. For now, use query parameters or the request body to provide identifiers if needed.
+
+## Path parameters
+
+You can define **path parameters** in the route path using a colon-prefixed segment: `:name`. The Dispatcher matches the path by position and passes captured values to your handler.
+
+**Syntax:** Use `:paramName` in the path. For example:
+
+- `"/items/:id"` — matches `/items/1`, `/items/abc`; captures `id`.
+- `"/schools/:schoolId/students/:studentId"` — captures `schoolId` and `studentId`.
+
+**In the controller:** Read path parameters via `request.pathParam()`, which returns a dict of parameter names to string values.
+
+```python
+# Route: path="/items/:id", methods=["GET"], handler=ItemController.getOne)
+async def getOne(request: Request):
+    params = request.pathParam()   # e.g. {"id": "42"}
+    item_id = params.get("id")
+    # fetch and return item
+```
+
+Path parameters are matched after static routes; routes with parameters are tried only when no static route matches.
 
 ---
 

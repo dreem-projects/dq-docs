@@ -38,7 +38,7 @@ Here the **business rule** is: “We only create when `name` and `email` are pre
 
 ```python title="Same idea for query params"
 async def getItem(request: Request):
-    body = await request.trimApplyRules({"id": "required,int"}, request.params())
+    body = await request.trimApplyRules({"id": "required,int"}, request.queryParam())
     if body.status < 0:
         return response(body, custom=True)
 
@@ -77,7 +77,7 @@ Here we **return res** only — the framework sends the model result as-is (HTTP
 
 ```python title="Fetching one record"
 async def getItem(request: Request):
-    queryParam = request.params()
+    queryParam = request.queryParam()
     if not queryParam.get("id", None):
         return response(message="id required", status=SysCodes.ATTR_MISSING, statuscode=400)
 
@@ -121,7 +121,7 @@ You can add rules like “only allow update if the user owns the record” by ca
 
 ```python
 async def deleteItem(request: Request):
-    validated = await request.trimApplyRules({"id": "required,int"}, request.params())
+    validated = await request.trimApplyRules({"id": "required,int"}, request.queryParam())
     if validated.status < 0:
         return response(validated, custom=True)
 

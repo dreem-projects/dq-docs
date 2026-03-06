@@ -13,12 +13,12 @@ This section covers everything that belongs to **incoming data and request handl
 
 | Topic | Description |
 |-------|-------------|
-| **Request object** | The single argument to controller handlers: body, params, headers, method, path. |
-| **Request functions** | The methods you call on the request: `body()`, `params()`, `applyRules()`, `trimApplyRules()`, `method()`, `path()`, `headers()`, `user()`, and helpers like `client()`, `server()`. |
+| **Request object** | The single argument to controller handlers: body, query, headers, method, path. |
+| **Request functions** | The methods you call on the request: `body()`, `queryParam()`, `pathParam()`, `applyRules()`, `trimApplyRules()`, `method()`, `path()`, `headers()`, `user()`, and helpers like `client()`, `server()`. |
 
 You do **not** create Request objects yourself. You **use** them inside controllers to:
 
-- Read the **body** (JSON or form) and **query/route params**.
+- Read the **body** (JSON or form), **query params**, and **path params**.
 - **Validate** input with `applyRules` or `trimApplyRules`.
 - Inspect **method**, **path**, **headers** (e.g. for auth or routing logic).
 - Call **user()** to run the registered auth handler and get the current user or auth result.
@@ -32,4 +32,4 @@ You do **not** create Request objects yourself. You **use** them inside controll
 3. The dispatcher invokes the handler registered for that route and passes the **Request** as the first argument.
 4. Your controller uses **request functions** (see [Request functions](request-functions.md)) to read and validate input, then returns a response.
 
-Next: [Request functions](request-functions.md) — body, params, validation, method, path, headers, auth.
+Next: [Request functions](request-functions.md) — body, query, validation, method, path, headers, auth.

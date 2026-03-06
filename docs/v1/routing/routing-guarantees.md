@@ -10,7 +10,7 @@ The Dispatcher provides these behaviors so your routes behave predictably.
 ## Single match
 
 - Each request is matched against the **cached route table** (built at startup from `initRoutes()`).
-- **One route** is chosen by **path + method**: the path is normalized, then the first matching route for that method is used.
+- **One route** is chosen by **path + method**: the path is normalized, then the first matching route for that method is used. **Static** paths (no `:param` segments) are matched first; **dynamic** routes (with path parameters) are tried only when no static route matches.
 - No automatic “fallback” route; if no route matches, the framework returns **404** (path not found).
 
 ## Path normalization

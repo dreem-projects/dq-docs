@@ -11,10 +11,11 @@ import controllers.sampleController as Sample
 routes = [
     route(path="/", methods=["GET", "POST"], handler=Sample.SampleController.welcome),
     route(path="/sample-read", methods=["GET"], handler=Sample.SampleController.sampleRead),
+    route(path="/items/:id", methods=["GET"], handler=ItemController.getOne),
 ]
 ```
 
-- **path** — Must start with `/`.
+- **path** — Must start with `/`. Use `:paramName` for path parameters (e.g. `"/items/:id"`); values are available via `request.pathParam()`. See [Defining routes — Path parameters](../routing/defining-routes.md#path-parameters).
 - **methods** — List of HTTP methods: `["GET"]`, `["POST"]`, `["PUT"]`, `["DELETE"]`, or combined.
 - **handler** — The controller’s async function (e.g. `SampleController.sampleRead`).
 

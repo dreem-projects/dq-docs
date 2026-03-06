@@ -10,7 +10,7 @@ from dreema.routing import route
 route(path: str, methods: list[str], handler: Callable) -> Route
 ```
 
-- **path** — URL path, must start with `/`.
+- **path** — URL path, must start with `/`. May include path parameters using `:name` (e.g. `"/items/:id"`). The Dispatcher matches by segment; captured values are available on the request via `request.pathParam()`.
 - **methods** — List of HTTP methods, e.g. `["GET", "POST"]`.
 - **handler** — Async function with signature `(request: Request) -> Response` (or return value that the framework converts to a response).
 

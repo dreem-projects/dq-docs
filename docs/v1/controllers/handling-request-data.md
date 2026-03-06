@@ -1,6 +1,6 @@
 # Handling request data
 
-Controllers get input from the **Request** object: body, query/params, and headers.
+Controllers get input from the **Request** object: body, query, and headers.
 
 ## Body (JSON / form)
 
@@ -14,19 +14,19 @@ body = await request.body()
 
 Use this for POST/PUT/PATCH payloads. Then validate with `applyRules` or `trimApplyRules` (see [Validation](../guides/validation.md)).
 
-## Query / params
+## Query
 
-Get query string (or route params) with:
+Get query string with:
 
 ```python
-params = request.params()
-# Use as dict for validation or for read params (e.g. id, limit, skip)
+query = request.queryParam()
+# Use as dict for validation or for query keys (e.g. id, limit, skip)
 ```
 
 Example: validate `id` from query and pass to read:
 
 ```python
-body = await request.trimApplyRules({'id': 'required'}, request.params())
+body = await request.trimApplyRules({'id': 'required'}, request.queryParam())
 if body.status > 0:
     mod = SampleModel()
     return await mod.read(filters={'id': body.data.id})
@@ -35,7 +35,7 @@ if body.status > 0:
 ## Validation
 
 - **request.applyRules(rules)** — Validate against the request body (default source).
-- **request.trimApplyRules(rules, source)** — Validate and trim unknown keys; **source** can be `request.params()` or the body.
+- **request.trimApplyRules(rules, source)** — Validate and trim unknown keys; **source** can be `request.queryParam()` or the body.
 
 Rules can include: `required`, `int`, `str`, `float`, `list`, `bool`, `nullable`, etc. If validation fails, the returned object has a negative status; return it to the client (e.g. `response(body, custom=True)`).
 

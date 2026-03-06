@@ -8,7 +8,7 @@ Request validation is explicit: use **applyRules** or **trimApplyRules** on the 
 
 ## trimApplyRules
 
-**request.trimApplyRules(rules [, source])** — Same as applyRules but **trims** the source to only the keys defined in **rules**; unknown keys are dropped. Useful to avoid passing extra fields to the model. **source** can be the body or **request.params()** for query params.
+**request.trimApplyRules(rules [, source])** — Same as applyRules but **trims** the source to only the keys defined in **rules**; unknown keys are dropped. Useful to avoid passing extra fields to the model. **source** can be the body or **request.queryParam()** for query params.
 
 Example:
 
@@ -16,7 +16,7 @@ Example:
 body = await request.trimApplyRules({
     'id': 'required',
     'name': 'required',
-}, request.params())  # validate query params
+}, request.queryParam())  # validate query params
 
 if body.status < 0:
     return response(body, custom=True)

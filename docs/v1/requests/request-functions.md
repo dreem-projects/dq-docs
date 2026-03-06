@@ -27,16 +27,30 @@ Use for POST/PUT/PATCH payloads. Then validate with [applyRules / trimApplyRules
 
 ---
 
-### params()
+### queryParam()
 
-Returns query string (and optionally route) parameters as a dict-like object.
+Returns query string parameters as a dict-like object.
 
 ```python
-params = request.params()
-# e.g. ?id=1&limit=10  →  params.get("id"), params.get("limit")
+query = request.queryParam()
+# e.g. ?id=1&limit=10  →  query.get("id"), query.get("limit")
 ```
 
-Use for GET query args or route params. Pass to `trimApplyRules(rules, request.params())` to validate query input. See [Handling request data](../controllers/handling-request-data.md).
+Use for GET query args. Pass to `trimApplyRules(rules, request.queryParam())` to validate query input. See [Handling request data](../controllers/handling-request-data.md).
+
+---
+
+### pathParam()
+
+Returns path parameters captured from the route when the path includes `:paramName` segments (see [Defining routes — Path parameters](../routing/defining-routes.md#path-parameters)).
+
+```python
+# Route: /items/:id  →  GET /items/42  →  request.pathParam() == {"id": "42"}
+params = request.pathParam()
+item_id = params.get("id")
+```
+
+Returns a dict of parameter names (strings) to the matched segment values. Empty dict if the route has no path parameters.
 
 ---
 
@@ -55,7 +69,7 @@ if body.status < 0:
 ```
 
 - **rules** — Dict mapping field names to rule strings: `required`, `int`, `str`, `float`, `list`, `bool` (comma-separated).
-- **source** — Optional. If omitted, body is used. Can pass `request.params()` to validate query params.
+- **source** — Optional. If omitted, body is used. Can pass `request.queryParam()` to validate query params.
 - **Returns** — Object with **data**, **status**, **message** (and **trace** on error). On failure, **status** is negative (e.g. `SysCodes.ATTR_MISSING`); return it to the client (e.g. `response(result, custom=True)`).
 
 ---
@@ -65,12 +79,12 @@ if body.status < 0:
 **Async.** Like **applyRules**, but the returned **data** contains **only** the keys defined in **rules**; unknown keys are stripped.
 
 ```python
-body = await request.trimApplyRules({"id": "required,int"}, request.params())
+body = await request.trimApplyRules({"id": "required,int"}, request.queryParam())
 if body.status > 0:
     id = body.data.id  # only validated keys present
 ```
 
-Use when you want a whitelist of allowed fields (e.g. query params or body) and avoid passing through extra keys. **source** can be body or `request.params()`. Rules can include **nullable**. See [Validation](../guides/validation.md).
+Use when you want a whitelist of allowed fields (e.g. query params or body) and avoid passing through extra keys. **source** can be body or `request.queryParam()`. Rules can include **nullable**. See [Validation](../guides/validation.md).
 
 ---
 
