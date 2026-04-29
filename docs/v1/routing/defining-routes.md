@@ -1,6 +1,6 @@
 # Defining Routes
 
-Routes define how HTTP **paths** and **methods** are linked to a **controller function**. In DQuode, you declare your routes [inside views](../views/creating-views.md). These are then gathered into a single list inside of `views/endpoints.py`, which the Dispatcher uses during startup.
+Routes define how HTTP **paths** and **methods** are linked to a **controller function**. In Dreema, you declare your routes [inside views](../views/creating-views.md). These are then gathered into a single list inside of `views/endpoints.py`, which the Dispatcher uses during startup.
 
 ---
 

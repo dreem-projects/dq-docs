@@ -1,6 +1,6 @@
-!!! info "MVC in DQuode – Practical Structure & Flow"
+!!! info "MVC in Dreema – Practical Structure & Flow"
 
-DQuode embraces a clear **MVC** (Model–View–Controller) pattern to separate concerns and boost clarity:
+Dreema embraces a clear **MVC** (Model–View–Controller) pattern to separate concerns and boost clarity:
 
 ---
 
@@ -70,4 +70,4 @@ sequenceDiagram
 - **Controller:** Request handler + orchestration
 - **Model:** Data access
 
-DQuode’s MVC makes code predictable, testable, and easy to extend—so you can focus on features, not boilerplate.
+Dreema’s MVC makes code predictable, testable, and easy to extend—so you can focus on features, not boilerplate.

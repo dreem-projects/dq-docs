@@ -1,6 +1,6 @@
 # Auth
 
-Authentication in DQuode is **pluggable**: you register an auth handler; controllers call it and decide how to respond.
+Authentication in Dreema is **pluggable**: you register an auth handler; controllers call it and decide how to respond.
 
 ## Registering the auth handler
 

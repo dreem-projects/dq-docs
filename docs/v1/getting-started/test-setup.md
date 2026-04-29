@@ -14,7 +14,7 @@ If you set a different port in `.env` (e.g. `SERVER_PORT=8000`), use that port i
 
 ## 2. Confirm the response shape
 
-DQuode responses use a consistent envelope. You should see JSON with at least:
+Dreema responses use a consistent envelope. You should see JSON with at least:
 
 - **`data`** — Payload (can be `null` on error).
 - **`message`** — Human-readable message (e.g. "Setup completed").

@@ -1,6 +1,6 @@
-site_name: DQuode Documentation
+site_name: Dreema Documentation
 # Overridden by CI to https://<owner>.github.io/<repo>/ when deploying to GitHub Pages (required for CSS/assets to load)
-site_url: https://docs.dquode.com
+site_url: https://docs.Dreema.com
 docs_dir: docs
 
 theme:
@@ -80,69 +80,66 @@ extra:
         url: v1/
 
 nav:
-    - Overview: index.md
-    - Current version (v1):
-        - v1:
+  - Overview: index.md
+  - Current version (v1):
+      - v1:
           - Introduction: v1/index.md
           - Setup:
-            - Requirements: v1/getting-started/requirements.md
-            - Setup and Go: v1/getting-started/setup.md
+              - Requirements: v1/getting-started/requirements.md
+              - Setup and Go: v1/getting-started/setup.md
           - Requests:
-            - Overview: v1/requests/index.md
-            - Request functions: v1/requests/request-functions.md
+              - Overview: v1/requests/index.md
+              - Request functions: v1/requests/request-functions.md
           - Response:
-            - Overview: v1/response/index.md
-            - Response functions: v1/response/response-functions.md
+              - Overview: v1/response/index.md
+              - Response functions: v1/response/response-functions.md
           - Routing:
-            - Defining routes: v1/routing/defining-routes.md
-            # - Route groups: v1/routing/route-groups.md
-            - Routing guarantees: v1/routing/routing-guarantees.md
+              - Defining routes: v1/routing/defining-routes.md
+              # - Route groups: v1/routing/route-groups.md
+              - Routing guarantees: v1/routing/routing-guarantees.md
           - Views:
-            - Creating views: v1/views/creating-views.md
-            - Defining routes: v1/views/defining-routes-in-views.md
-            - Multiple routes and route groups: v1/views/multiple-routes-and-route-groups.md
-            - Additional options: v1/views/additional-options.md
+              - Creating views: v1/views/creating-views.md
+              - Defining routes: v1/views/defining-routes-in-views.md
+              - Multiple routes and route groups: v1/views/multiple-routes-and-route-groups.md
+              - Additional options: v1/views/additional-options.md
           - Controllers:
-            - Key aspects: v1/controllers/key-aspects.md
-            - Creating controllers: v1/controllers/creating-controllers.md
-            - How to use: v1/controllers/using-controllers.md
-            # - Handling request data: v1/controllers/handling-request-data.md
-            - Sample implementations: v1/controllers/implementing-common-intents.md
-            - Connecting to view: v1/controllers/connecting-to-view.md
-            - Handling function responses: v1/controllers/handling-function-responses.md
+              - Key aspects: v1/controllers/key-aspects.md
+              - Creating controllers: v1/controllers/creating-controllers.md
+              - How to use: v1/controllers/using-controllers.md
+              # - Handling request data: v1/controllers/handling-request-data.md
+              - Sample implementations: v1/controllers/implementing-common-intents.md
+              - Connecting to view: v1/controllers/connecting-to-view.md
+              - Handling function responses: v1/controllers/handling-function-responses.md
           - Models:
-            - Creating a model: v1/models/creating-a-model.md
-            - Linking to tables: v1/models/linking-to-tables.md
-            - Using models: v1/models/using-models.md
+              - Creating a model: v1/models/creating-a-model.md
+              - Linking to tables: v1/models/linking-to-tables.md
+              - Using models: v1/models/using-models.md
           - Database operations:
-            - Setup: v1/database/setup-required.md
-            - Database functions: v1/database/database-functions.md
-            - Create: v1/database/create.md
-            - Read: v1/database/read.md
-            - Update: v1/database/update.md
-            - Delete: v1/database/delete.md
-            - Count: v1/database/count.md
-            - Filters and params: v1/database/filters-and-params.md
+              - Setup: v1/database/setup-required.md
+              - Database functions: v1/database/database-functions.md
+              - Create: v1/database/create.md
+              - Read: v1/database/read.md
+              - Update: v1/database/update.md
+              - Delete: v1/database/delete.md
+              - Count: v1/database/count.md
+              - Filters and params: v1/database/filters-and-params.md
           - Limitations: v1/limitations/index.md
           - Guides & reference:
-            - Auth: v1/guides/auth.md
-            - Validation: v1/guides/validation.md
-            - Config: v1/guides/config.md
-            - CORS: v1/guides/cors.md
-            - Extensibility: v1/guides/extensibility.md
-            - Scheduler: v1/guides/scheduler.md
-            - Security: v1/guides/security.md
-            - Files: v1/guides/files.md
+              - Auth: v1/guides/auth.md
+              - Validation: v1/guides/validation.md
+              - Config: v1/guides/config.md
+              - CORS: v1/guides/cors.md
+              - Extensibility: v1/guides/extensibility.md
+              - Scheduler: v1/guides/scheduler.md
+              - Security: v1/guides/security.md
+              - Files: v1/guides/files.md
           - API reference:
-            - Routing: v1/api-reference/routing.md
-            - Request: v1/api-reference/request.md
-            - Response: v1/api-reference/response.md
-            - ORM: v1/api-reference/orm.md
-            - Security: v1/api-reference/security.md
+              - Routing: v1/api-reference/routing.md
+              - Request: v1/api-reference/request.md
+              - Response: v1/api-reference/response.md
+              - ORM: v1/api-reference/orm.md
+              - Security: v1/api-reference/security.md
           - Changelog: v1/changelog.md
           - Deployment: v1/deployment.md
 
-
-    # - Previous versions:
-      
-     
+  # - Previous versions:

@@ -3,13 +3,13 @@
 Views are **route definitions**: they build the path–method–handler list used by the Dispatcher. They do not render HTML; they map URLs and HTTP methods to controller handlers. View modules live under the **views/** package, and the framework loads a **routes** list from them (e.g. `from views.endpoints import routes`).
 
 !!! tip "Quick path"
-Create a view in two ways: **scaffold from the terminal** (via the dquode terminal) or **copy an existing view file**. Both end with a new file under `views/` ready for you to wire routes to controllers.
+Create a view in two ways: **scaffold from the terminal** (via the Dreema terminal) or **copy an existing view file**. Both end with a new file under `views/` ready for you to wire routes to controllers.
 
 ---
 
 ## Option A — Scaffold from the terminal
 
-From the project root (where `terminal.py` lives in dquode):
+From the project root (where `terminal.py` lives in Dreema):
 
 ```bash
 python terminal.py create=view class=Endpoints name=endpoints
@@ -21,7 +21,7 @@ python terminal.py create=view class=Endpoints name=endpoints
 | **class**  | The view class or module name (e.g. `Endpoints`, `AdminRoutes`). |
 | **name**   | The file name without `.py` (e.g. `endpoints`, `admin`).         |
 
-This creates `views/<name>.py` with a stub that imports `route` (and optionally `routegroup`) and defines a route list. Open the file and wire **path**, **methods**, and **handler** to your controllers. Ensure the module exports a **routes** list so the Dispatcher can load it (e.g. in dquode, `from views.endpoints import routes`).
+This creates `views/<name>.py` with a stub that imports `route` (and optionally `routegroup`) and defines a route list. Open the file and wire **path**, **methods**, and **handler** to your controllers. Ensure the module exports a **routes** list so the Dispatcher can load it (e.g. in Dreema, `from views.endpoints import routes`).
 
 ---
 

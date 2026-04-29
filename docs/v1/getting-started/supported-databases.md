@@ -1,6 +1,6 @@
 # Supported database systems
 
-DQuode's built-in ORM supports the following databases through a single API. Choose the backend with the `DB_TYPE` setting in [Setup](setup.md); the same model and CRUD calls work for both.
+Dreema's built-in ORM supports the following databases through a single API. Choose the backend with the `DB_TYPE` setting in [Setup](setup.md); the same model and CRUD calls work for both.
 
 ## MySQL
 
@@ -15,7 +15,7 @@ DQuode's built-in ORM supports the following databases through a single API. Cho
 - **Use case:** Document storage, flexible schema.
 
 !!! info "One API for both"
-    Models extend `database.Database` and use the same methods regardless of backend:
+Models extend `database.Database` and use the same methods regardless of backend:
 
     - `create(data, params=None)`
     - `read(filters=None, params=None)`

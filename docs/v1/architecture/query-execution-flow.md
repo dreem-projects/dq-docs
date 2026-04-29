@@ -1,4 +1,4 @@
-# 🔄 Query Execution Flow in DQuode
+# 🔄 Query Execution Flow in Dreema
 
 How does a database query travel from your controller, through models, to the database and back?  
 Let’s clarify the path, spotlight the simplicity, and make the mechanism visually clear.
@@ -27,7 +27,7 @@ flowchart LR
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **1. Model Boot**         | Controller instantiates a model (e.g., `SampleModel()`). The model sets up its table/collection with `self.setTable(self.tablename)`, leveraging the unified ORM.                                                   |
 | **2. Database Routing**   | The model’s parent (`dreema.orm.database.Database`) inspects `getenv("DB_TYPE")` to pick the active database system from the list of [supported database systems](getting-started/supported-databases.md)           |
-|  |
+|                           |
 | **3. Single-API CRUD**    | The model exposes: <br> &nbsp;&nbsp;• `read(filters, params)`<br> &nbsp;&nbsp;• `create(data)`<br> &nbsp;&nbsp;• `update(filters, data)`<br> &nbsp;&nbsp;• `delete(filters)` <br>—each working the same across DBs. |
 | **4. Consistent Results** | Model returns plain dicts, scalars, or lists—always serializable. <br> NO ORM objects, NO extra serialization headaches.                                                                                            |
 | **5. Unified Response**   | Controller takes this data and returns it via the standard response envelope: <br>`response(data=...)`                                                                                                              |
@@ -81,7 +81,7 @@ sequenceDiagram
 
 ## 🔖 Summary
 
-- **Invoke model CRUD** ➔ **let DQuode handle the rest**.
+- **Invoke model CRUD** ➔ **let Dreema handle the rest**.
 - Data flow is always:  
   **Controller ➔ Model ➔ Database ➔ Model ➔ Controller ➔ JSON Response**
 

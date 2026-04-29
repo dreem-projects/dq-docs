@@ -1,6 +1,6 @@
 # Config
 
-DQuode uses a clear split: **non-secret configuration** in **settings.json**, **secrets** in **.env**, and optional app-level config in **config.py**. This keeps credentials out of version control and makes multi-database setup straightforward.
+Dreema uses a clear split: **non-secret configuration** in **settings.json**, **secrets** in **.env**, and optional app-level config in **config.py**. This keeps credentials out of version control and makes multi-database setup straightforward.
 
 ---
 
@@ -21,7 +21,7 @@ Example (safe to commit or share):
       "type": "mysql",
       "host": "localhost",
       "port": 3306,
-      "database": "dquode_test",
+      "database": "Dreema_test",
       "useTls": false
     },
     "app": {
@@ -53,7 +53,7 @@ See [Database setup](../database/setup-required.md) for how the ORM uses `databa
 | `DB_TYPE`     | Engine        | `mysql`       |
 | `DB_HOST`     | Host          | `localhost`   |
 | `DB_PORT`     | Port          | `3306`        |
-| `DB_NAME`     | Database name | `dquode_test` |
+| `DB_NAME`     | Database name | `Dreema_test` |
 | `DB_USER`     | Username      | `root`        |
 | `DB_PASSWORD` | Password      | _(secret)_    |
 | `DB_USE_TLS`  | Use TLS       | `false`       |

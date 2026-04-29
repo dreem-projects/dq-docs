@@ -1,6 +1,6 @@
 # 🏗️ Architectural Overview
 
-DQuode is a **request–response backend** built on ASGI for high performance and predictability. Every request passes through a clear, unified pipeline:
+Dreema is a **request–response backend** built on ASGI for high performance and predictability. Every request passes through a clear, unified pipeline:
 
 <div style="text-align: center; margin: 2em 0;">
   
@@ -85,4 +85,4 @@ flowchart LR
 - Central config in `config.CONFIG` / `getconfig`.
 - Custom codes/messages/auth in `registers.py`.
 
-_DQuode makes the whole data—logic—route—response journey visible, explicit, and easy to reason about. No hidden behaviors, just a clear backend stack._
+_Dreema makes the whole data—logic—route—response journey visible, explicit, and easy to reason about. No hidden behaviors, just a clear backend stack._

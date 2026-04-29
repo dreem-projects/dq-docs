@@ -1,9 +1,9 @@
-# 📂 DQuode Project Structure
+# 📂 Dreema Project Structure
 
-A typical **DQuode** project (such as `dquode/`) is organized clearly and predictably:
+A typical **Dreema** project (such as `Dreema/`) is organized clearly and predictably:
 
 ```plaintext
-dquode/
+Dreema/
 ├── index.py                # ASGI application entrypoint: handles startup, requests, and shutdown
 ├── start.py                # Runs uvicorn (server); sets port and reload behavior from environment
 ├── context.py              # Application context: database, Redis (optional), and route initialization

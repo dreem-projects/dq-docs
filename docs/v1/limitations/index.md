@@ -1,6 +1,6 @@
 # Limitations
 
-This section describes current constraints and behaviors you should be aware of when building with DQuode.
+This section describes current constraints and behaviors you should be aware of when building with Dreema.
 
 ## Multiple conditions on the same field
 
@@ -30,4 +30,4 @@ Route cache and DB connections are built at **startup** (lifespan). Changing rou
 
 ## No migrations; DB constraints external
 
-DQuode does **not** run or ship migrations. Tables and collections must be created and altered outside the app (manual SQL, migration tools, or the database shell). See [Supported database systems](../getting-started/supported-databases.md). Constraints (unique, foreign key, indexes) are managed in the database; the ORM does not enforce them beyond what the engine does.
+Dreema does **not** run or ship migrations. Tables and collections must be created and altered outside the app (manual SQL, migration tools, or the database shell). See [Supported database systems](../getting-started/supported-databases.md). Constraints (unique, foreign key, indexes) are managed in the database; the ORM does not enforce them beyond what the engine does.

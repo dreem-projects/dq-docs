@@ -41,7 +41,7 @@ Example:
 
 ```python
 class SampleModel(database.Database):
-    tablename = 'dquode_sample'
+    tablename = 'Dreema_sample'
 
     def __init__(self, connection='default'):
         super().__init__(connection)

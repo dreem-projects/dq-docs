@@ -1,6 +1,6 @@
 # Deployment
 
-This section covers running DQuode in production: environment, app server, optional Celery, and config.
+This section covers running Dreema in production: environment, app server, optional Celery, and config.
 
 ## Environment
 
@@ -23,4 +23,4 @@ This section covers running DQuode in production: environment, app server, optio
 ## Config and secrets
 
 - Keep **.env** out of version control; inject env vars or use a secrets manager in production.
-- Use **getconfig** and **registers** for CORS, auth, and custom codes/messages appropriate for the deployed environment.
+- Use **settings** and **registers** for CORS, auth, and custom codes/messages appropriate for the deployed environment.

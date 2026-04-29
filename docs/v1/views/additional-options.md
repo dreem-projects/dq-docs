@@ -17,4 +17,4 @@ Merge all lists in `context.py` and pass to `Dispatcher.initRoutes()`.
 
 ## No view-level middleware
 
-In this version, DQuode does not attach middleware at the view level. CORS and global behavior are handled in the Dispatcher. Per-route logic (auth, validation) lives in the **controller**.
+In this version, Dreema does not attach middleware at the view level. CORS and global behavior are handled in the Dispatcher. Per-route logic (auth, validation) lives in the **controller**.

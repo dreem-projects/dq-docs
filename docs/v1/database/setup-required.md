@@ -45,7 +45,7 @@ In **settings.json**, under `databases`, add one entry per connection. Use **def
       "type": "mysql",
       "host": "localhost",
       "port": 3306,
-      "database": "dquode_test",
+      "database": "Dreema_test",
       "useTls": false
     },
     "app": {
@@ -75,7 +75,7 @@ At the **model level**, pass the connection name into the constructor. The model
 
 ```python
 class SampleModel(database.Database):
-    tablename = 'dquode_sample'
+    tablename = 'Dreema_sample'
 
     def __init__(self, connection='default'):
         super().__init__(connection)
@@ -100,7 +100,7 @@ This keeps configuration in one place (settings + .env) and makes switching data
 
 Each model must call **setTable(self.tablename)** in `__init__` so all ([database operations](database-functions.md)) target the correct table or collection. Use the `connection` parameter as above when you have multiple databases.
 
-- For SQL backends ([Supported database systems](../getting-started/supported-databases.md)) — The table must exist; DQuode does not create tables or run migrations.
+- For SQL backends ([Supported database systems](../getting-started/supported-databases.md)) — The table must exist; Dreema does not create tables or run migrations.
 - For document backends — The collection is used as-is; it may be created on first insert.
 
 Once env (and optionally settings) and model are set, you can perform any ([database operations](database-functions.md)).

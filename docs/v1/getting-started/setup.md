@@ -1,12 +1,12 @@
-!!! info "DQuode sets you up in 3 simple steps"
+!!! info "Dreema sets you up in 3 simple steps"
 
 ## 1. Get the project
 
-Clone the DQuode project or create your app from a DQuode-based template.
+Clone the Dreema project or create your app from a Dreema-based template.
 
 ## 2. Install dependencies
 
-From the project root (e.g. `dquode/`):
+From the project root (e.g. `Dreema/`):
 
 ```bash
 pip install -r requirements.txt
@@ -20,13 +20,13 @@ From the project root, run:
 python start.py
 ```
 
-This starts the app (Uvicorn) using defaults from **settings.json**. If the requested port is already in use, the app will try the next available port and print a message (e.g. *Port 8888 is already in use. Try next available port: 8889*).
+This starts the app (Uvicorn) using defaults from **settings.json**. If the requested port is already in use, the app will try the next available port and print a message (e.g. _Port 8888 is already in use. Try next available port: 8889_).
 
 ## 4. Access your application
 
-Open [http://127.0.0.1:8888/](http://127.0.0.1:8888/) in your browser, or use curl to access it. By default, DQuode runs on port **8888**, but you can change this to any port you prefer. If you see a JSON response with `"message": "Setup completed, Let's build"`, your setup is complete.
+Open [http://127.0.0.1:8888/](http://127.0.0.1:8888/) in your browser, or use curl to access it. By default, Dreema runs on port **8888**, but you can change this to any port you prefer. If you see a JSON response with `"message": "Setup completed, Let's build"`, your setup is complete.
 
-🎉 You're all set up! Start building your API with DQuode now.
+🎉 You're all set up! Start building your API with Dreema now.
 
 !!! info "Configuration: settings and .env"
 
