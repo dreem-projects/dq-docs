@@ -1,6 +1,6 @@
 # Linking models to tables
 
-In Dreema, a model is tied to a **single table or collection**. This is the only actionable action you can take currently in the models class. Dreema takes care of the rest.
+In Dreema, a model is tied to a **single table or collection**.
 
 ## Table/collection name
 

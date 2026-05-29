@@ -1,12 +1,12 @@
 # Config
 
-Dreema uses a clear split: **non-secret configuration** in **settings.json**, **secrets** in **.env**, and optional app-level config in **config.py**. This keeps credentials out of version control and makes multi-database setup straightforward.
+Dreema uses a clear split: **non-secret configuration** in **settings.py**, **secrets** in **.env**, and optional app-level config in **config.py**. This keeps credentials out of version control and makes multi-database setup straightforward.
 
 ---
 
-## Settings (non-secrets): settings.json
+## Settings (non-secrets): settings.py
 
-**settings.json** (or **.settings.json** / **.settings.example.json** in your project root) holds **all configuration that is not secret**: environment name, server port, database connection _structure_ (type, host, port, database name, TLS flag), Redis host/port, etc. **No passwords or usernames** go here — only structure and non-sensitive values.
+**settings.py** (or **.settings.py** / **.settings.example.json** in your project root) holds **all configuration that is not secret**: environment name, server port, database connection _structure_ (type, host, port, database name, TLS flag), Redis host/port, etc. **No passwords or usernames** go here — only structure and non-sensitive values.
 
 The framework reads it with **settings(key)** from `dreema.helpers`. Use dot-notation for nested keys: `settings("databases.default.host")`, `settings("serverPort")`, `settings("environment")`.
 
@@ -63,7 +63,7 @@ See [Database setup](../database/setup-required.md) for how the ORM uses `databa
 - `DB_APP_USER`, `DB_APP_PASSWORD` for connection **app**
 - `DB_CUSTOMERS_USER`, `DB_CUSTOMERS_PASSWORD` for connection **customers**
 
-The connection’s type, host, port, and database name come from **settings.json**; only user and password come from **.env**. See [Multi-database](../database/setup-required.md#multi-database).
+The connection’s type, host, port, and database name come from **settings.py**; only user and password come from **.env**. See [Multi-database](../database/setup-required.md#multi-database).
 
 **Redis** (if used): `REDIS_HOST`, `REDIS_PORT`, `REDIS_PASSWORD` — all from .env.
 
@@ -151,4 +151,4 @@ The framework may read config for built-in behaviour (e.g. **getconfig("cors")**
 | Read   | In code, call **getconfig("key")** (and optionally **getconfig("key", default)**).          |
 | Result | You get back exactly what you set for that key.                                             |
 
-For **non-secret** structure (DB host, port, database name, server port), use **settings.json** and **settings("key")** as above. For **secrets** (DB user, password, Redis password), use **.env** and **getenv("VAR_NAME")**; **getenv** also falls back to the system environment. **config.py** is for application shape and options (e.g. CORS, feature flags) that are not environment-specific secrets.
+For **non-secret** structure (DB host, port, database name, server port), use **settings.py** and **settings("key")** as above. For **secrets** (DB user, password, Redis password), use **.env** and **getenv("VAR_NAME")**; **getenv** also falls back to the system environment. **config.py** is for application shape and options (e.g. CORS, feature flags) that are not environment-specific secrets.

@@ -1,6 +1,6 @@
 # Database setup required
 
-Before working with the ORM, you need either **.env** (for the default connection) or **settings.json** plus **.env** (for structure and secrets). Models must specify the table/collection name and can optionally specify which **connection** to use for multi-database setups.
+Before working with the ORM, you need either **.env** (for the default connection) or **settings.py** plus **.env** (for structure and secrets). Models must specify the table/collection name and can optionally specify which **connection** to use for multi-database setups.
 
 ---
 
@@ -22,19 +22,19 @@ The ORM reads these when you use a model with the default connection (no connect
 
 ---
 
-## Optional: structure in settings.json
+## Optional: structure in settings.py
 
-You can define the **default** (and any extra) connection in **settings.json** so all non-secret values live in one place. In that case, **.env** only needs **DB_USER** and **DB_PASSWORD** for the default connection; type, host, port, and database name come from [settings](../guides/config.md#settings-non-secrets-settingsjson). Named connections (see below) always use settings for structure and .env for credentials.
+You can define the **default** (and any extra) connection in **settings.py** so all non-secret values live in one place. In that case, **.env** only needs **DB_USER** and **DB_PASSWORD** for the default connection; type, host, port, and database name come from [settings](../guides/config.md#settings-non-secrets-settingsjson). Named connections (see below) always use settings for structure and .env for credentials.
 
 ---
 
 ## Multi-database
 
-You can use **multiple databases** in the same app: define each connection in **settings.json** (non-secrets), put credentials in **.env**, and choose the connection when you create the model instance.
+You can use **multiple databases** in the same app: define each connection in **settings.py** (non-secrets), put credentials in **.env**, and choose the connection when you create the model instance.
 
-### 1. Define connections in settings.json
+### 1. Define connections in settings.py
 
-In **settings.json**, under `databases`, add one entry per connection. Use **default** for the default connection, and any other name (e.g. **app**, **customers**, **analytics**) for the rest. Do **not** put user or password here — only type, host, port, database, and useTls.
+In **settings.py**, under `databases`, add one entry per connection. Use **default** for the default connection, and any other name (e.g. **app**, **customers**, **analytics**) for the rest. Do **not** put user or password here — only type, host, port, database, and useTls.
 
 ```json
 {
@@ -88,7 +88,7 @@ class SampleModel(database.Database):
 # Use default database
 mod = SampleModel()
 
-# Use the "app" database (defined in settings.json + .env)
+# Use the "app" database (defined in settings.py + .env)
 mod = SampleModel(connection='app')
 ```
 

@@ -20,7 +20,7 @@ From the project root, run:
 python start.py
 ```
 
-This starts the app (Uvicorn) using defaults from **settings.json**. If the requested port is already in use, the app will try the next available port and print a message (e.g. _Port 8888 is already in use. Try next available port: 8889_).
+This starts the app (Uvicorn) using defaults from **settings.py**. If the requested port is already in use, the app will try the next available port and print a message (e.g. _Port 8888 is already in use. Try next available port: 8889_).
 
 ## 4. Access your application
 
@@ -30,25 +30,25 @@ Open [http://127.0.0.1:8888/](http://127.0.0.1:8888/) in your browser, or use cu
 
 !!! info "Configuration: settings and .env"
 
-    Non-secret config (environment, server port, database structure) lives in **settings.json**; secrets (DB user/password, Redis password) go in **.env**. See [Config](../guides/config.md) and [Database setup](../database/setup-required.md). For [multi-database](../database/setup-required.md#multi-database), define connections in settings and pass the connection name when creating models.
+    Non-secret config (environment, server port, database structure) lives in **settings.py**; secrets (DB user/password, Redis password) go in **.env**. See [Config](../guides/config.md) and [Database setup](../database/setup-required.md). For [multi-database](../database/setup-required.md#multi-database), define connections in settings and pass the connection name when creating models.
 
 !!! info "Start options"
 
     **Port and host**
 
-    - Default port comes from **serverPort** in **settings.json** (default **8888**). To use another port: set **serverPort** in **settings.json** or run `python start.py --port=<PORT>`.
+    - Default port comes from **serverPort** in **settings.py** (default **8888**). To use another port: set **serverPort** in **settings.py** or run `python start.py --port=<PORT>`.
     - Default host is **127.0.0.1**. Override with `python start.py --host=<HOST>`.
 
     **Reload (development)**
 
-    - Auto-reload is **on** when **environment** in **settings.json** is **local**, and **off** when **environment** is **live**.
+    - Auto-reload is **on** when **environment** in **settings.py** is **local**, and **off** when **environment** is **live**.
     - Override: `python start.py --reload` or `python start.py --no-reload`.
 
     **Other CLI flags**
 
     | Flag | Default | Description |
     |------|---------|-------------|
-    | `--port` | from **settings.json** (serverPort) or 8888 | Port to run the server on. |
+    | `--port` | from **settings.py** (serverPort) or 8888 | Port to run the server on. |
     | `--host` | 127.0.0.1 | Host address. |
     | `--reload` / `--no-reload` | reload on if environment is local | Enable or disable auto-reload. |
     | `--log-level` | info | Logging level. |

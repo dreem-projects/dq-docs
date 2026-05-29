@@ -35,7 +35,7 @@ If the project uses a central model list (e.g. `models/_modelsList.py`), registe
 
 ## Choosing the database connection
 
-When you use [multiple databases](../database/setup-required.md#multi-database), the model must accept a **connection** argument and pass it to `super().__init__(connection)`. The connection name must match a key under `databases` in [settings.json](../guides/config.md#settings-non-secrets-settingsjson) (e.g. `default`, `app`, `customers`). Credentials for each connection live in [.env](../guides/config.md#secrets-env).
+When you use [multiple databases](../database/setup-required.md#multi-database), the model must accept a **connection** argument and pass it to `super().__init__(connection)`. The connection name must match a key under `databases` in [settings.py](../guides/config.md#settings-non-secrets-settingsjson) (e.g. `default`, `app`, `customers`). Credentials for each connection live in [.env](../guides/config.md#secrets-env).
 
 Example:
 

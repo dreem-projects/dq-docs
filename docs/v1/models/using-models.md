@@ -12,7 +12,7 @@ from models.sampleModel import SampleModel
 # Default database
 mod = SampleModel()
 
-# Or a named database (e.g. "app" defined in settings.json + .env)
+# Or a named database (e.g. "app" defined in settings.py + .env)
 mod = SampleModel(connection='app')
 
 # Create a record
